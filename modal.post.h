@@ -135,12 +135,19 @@ void keypress(XEvent *e) {
             updatebars();
             handled = True;
           }
-          if(keysym == XK_BackSpace)
+          switch(keysym)
           {
-            if(i != 0)
-              renamed_tags[renametag][i - 1] = '\0';
-            updatebars();
-            handled = True;
+            case XK_BackSpace:
+              if(i != 0)
+                renamed_tags[renametag][i - 1] = '\0';
+              updatebars();
+              handled = True;
+              break;
+            case XK_Shift_L:
+            case XK_Shift_R:
+            case XK_Caps_Lock:
+              handled = True;
+              break;
           }
           if(!handled && i == 0)
           {
