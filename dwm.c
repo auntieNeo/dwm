@@ -499,6 +499,9 @@ cleanup(void) {
 		cleanupmon(mons);
 	XSync(dpy, False);
 	XSetInputFocus(dpy, PointerRoot, RevertToPointerRoot, CurrentTime);
+
+  for(int i = 0; i < LENGTH(renamed_tags); i++)
+    free(renamed_tags[i]);
 }
 
 void
@@ -1010,7 +1013,7 @@ grabbuttons(Client *c, Bool focused) {
 }
 
 void
-grabkeys(void) {
+defgrabkeys(void) {
 	updatenumlockmask();
 	{
 		unsigned int i, j;
@@ -1078,7 +1081,7 @@ isuniquegeom(XineramaScreenInfo *unique, size_t n, XineramaScreenInfo *info) {
 #endif /* XINERAMA */
 
 void
-keypress(XEvent *e) {
+defkeypress(XEvent *e) {
 	unsigned int i;
 	KeySym keysym;
 	XKeyEvent *ev;
