@@ -113,7 +113,7 @@ void keypress(XEvent *e) {
             renamed_tags[renametag] = malloc(256);
             tags[renametag] = renamed_tags[renametag];
           }
-          renamed_tags[renametag][0] = '\0';
+          sprintf(renamed_tags[renametag], "%s:", original_tags[renametag]);
           updatebars();
           keymode = RENAMETAG_INPUT;
           handled = True;
