@@ -1629,6 +1629,8 @@ setup(void) {
 	/* init bars */
 	updatebars();
 	updatestatus();
+  /* init modal tags */
+  memcpy(original_tags, tags, LENGTH(tags) * sizeof(const char *));
 	/* EWMH support per view */
 	XChangeProperty(dpy, root, netatom[NetSupported], XA_ATOM, 32,
 			PropModeReplace, (unsigned char *) netatom, NetLast);

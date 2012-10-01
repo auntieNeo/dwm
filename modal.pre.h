@@ -12,6 +12,7 @@ typedef struct {
 } TagKey;
 
 static char *renamed_tags[LENGTH(tags)];
+static const char *original_tags[LENGTH(tags)];
 
 static void defkeypress(XEvent *e);
 static void defgrabkeys(void);

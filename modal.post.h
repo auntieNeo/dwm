@@ -133,10 +133,21 @@ void keypress(XEvent *e) {
             renamed_tags[renametag][i] = keysym;
             renamed_tags[renametag][i+1] = '\0';
             updatebars();
-          }
-          if(keysym != XK_Return)
-          {
             handled = True;
+          }
+          if(keysym == XK_BackSpace)
+          {
+            if(i != 0)
+              renamed_tags[renametag][i - 1] = '\0';
+            updatebars();
+            handled = True;
+          }
+          if(!handled && i == 0)
+          {
+            free(renamed_tags[renametag]);
+            renamed_tags[renametag] = NULL;
+            tags[renametag] = original_tags[renametag];
+            updatebars();
           }
           break;
         }
