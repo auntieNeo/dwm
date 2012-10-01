@@ -23,7 +23,8 @@ static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
 //static const char *tags[] = { "1main", "2web", "3irc", "4code", "5sch", "6ja", "7music", "8dict", "9misc" };
-static const char *tags[] = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+//static const char *tags[] = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 #include "modal.pre.h"
 
@@ -140,34 +141,17 @@ static Key keys[] = {
   { MISCKEY,                      XK_Down,   spawn,          {.v = brightness_down} },
 };
 
-/* keys used with tagmode */
+/* keys used with modal tags */
 static TagKey tagkeys[] = {
-  { XK_a, 1 },
-  { XK_b, 1 << 1 },
-  { XK_c, 1 << 2 },
-  { XK_d, 1 << 3 },
-  { XK_e, 1 << 4 },
-  { XK_f, 1 << 5 },
-  { XK_g, 1 << 6 },
-  { XK_h, 1 << 7 },
-  { XK_i, 1 << 8 },
-  { XK_j, 1 << 9 },
-  { XK_k, 1 << 10 },
-  { XK_l, 1 << 11 },
-  { XK_m, 1 << 12 },
-  { XK_n, 1 << 13 },
-  { XK_o, 1 << 14 },
-  { XK_p, 1 << 15 },
-  { XK_q, 1 << 16 },
-  { XK_r, 1 << 17 },
-  { XK_s, 1 << 18 },
-  { XK_t, 1 << 19 },
-  { XK_u, 1 << 20 },
-  { XK_v, 1 << 21 },
-  { XK_w, 1 << 22 },
-  { XK_x, 1 << 23 },
-  { XK_y, 1 << 24 },
-  { XK_z, 1 << 25 },
+  { XK_1, 1 },
+  { XK_2, 1 << 1 },
+  { XK_3, 1 << 2 },
+  { XK_4, 1 << 3 },
+  { XK_5, 1 << 4 },
+  { XK_6, 1 << 5 },
+  { XK_7, 1 << 6 },
+  { XK_8, 1 << 7 },
+  { XK_9, 1 << 8 },
   { XK_0, ~0 },
 };
 
